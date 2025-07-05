@@ -153,7 +153,7 @@ export default function Home() {
           <div className="hidden lg:flex lg:w-1/2 items-center justify-center p-8 bg-primary/10 relative">
             <Character />
           </div>
-          <div className="flex flex-col w-full lg:w-1/2 h-screen">
+          <div className="flex flex-col w-full lg:w-1/2">
             <div className="flex-1 flex flex-col p-4 md:p-6 bg-background/80 backdrop-blur-sm">
                 <Card className="flex flex-col h-full w-full border-0 shadow-none bg-transparent">
                   <CardHeader className="flex flex-row items-center justify-between p-2">
