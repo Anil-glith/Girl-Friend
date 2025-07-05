@@ -33,7 +33,7 @@ export default function Home() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const scrollAreaRef = useRef<HTMLDivElement>(null);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     try {
@@ -65,12 +65,7 @@ export default function Home() {
     if (messages.length > 0) {
       localStorage.setItem("priya-chat", JSON.stringify(messages));
     }
-    if (scrollAreaRef.current) {
-        const viewport = scrollAreaRef.current.querySelector('div[data-radix-scroll-area-viewport]');
-        if (viewport) {
-            viewport.scrollTop = viewport.scrollHeight;
-        }
-    }
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
   const handleClearChat = () => {
@@ -173,7 +168,7 @@ export default function Home() {
                   </CardHeader>
 
                   <CardContent className="flex-1 p-2 overflow-hidden">
-                    <ScrollArea className="h-full pr-4" ref={scrollAreaRef}>
+                    <ScrollArea className="h-full pr-4">
                         <div className="space-y-6">
                             {messages.map((message, index) => (
                             <div
@@ -216,6 +211,7 @@ export default function Home() {
                                     </div>
                                 </div>
                             )}
+                            <div ref={messagesEndRef} />
                         </div>
                     </ScrollArea>
                   </CardContent>
