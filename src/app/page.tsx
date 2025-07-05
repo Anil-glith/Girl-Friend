@@ -24,7 +24,7 @@ export default function Home() {
 
   useEffect(() => {
     try {
-      const storedMessages = localStorage.getItem("pastel-pal-chat");
+      const storedMessages = localStorage.getItem("priya-chat");
       if (storedMessages) {
         setMessages(JSON.parse(storedMessages));
       } else {
@@ -50,7 +50,7 @@ export default function Home() {
 
   useEffect(() => {
     if (messages.length > 0) {
-      localStorage.setItem("pastel-pal-chat", JSON.stringify(messages));
+      localStorage.setItem("priya-chat", JSON.stringify(messages));
     }
     if (scrollAreaRef.current) {
         const viewport = scrollAreaRef.current.querySelector('div[data-radix-scroll-area-viewport]');
@@ -67,7 +67,7 @@ export default function Home() {
         content: "Hello again! Ready for a fresh start?",
       },
     ]);
-    localStorage.removeItem("pastel-pal-chat");
+    localStorage.removeItem("priya-chat");
   };
 
   const handleSubmit = async (e: FormEvent) => {
@@ -113,11 +113,11 @@ export default function Home() {
               <CardHeader className="flex flex-row items-center justify-between p-2">
                  <div className="flex items-center space-x-4">
                     <Avatar>
-                      <AvatarImage src="https://placehold.co/100x100.png" data-ai-hint="anime girl" alt="Pastel Pal" />
-                      <AvatarFallback>PP</AvatarFallback>
+                      <AvatarImage src="https://placehold.co/100x100.png" data-ai-hint="anime girl" alt="Priya" />
+                      <AvatarFallback>P</AvatarFallback>
                     </Avatar>
                     <div>
-                      <p className="text-lg font-medium font-headline text-foreground">Pastel Pal</p>
+                      <p className="text-lg font-medium font-headline text-foreground">Priya</p>
                       <p className="text-sm text-muted-foreground">Online</p>
                     </div>
                   </div>
@@ -139,8 +139,8 @@ export default function Home() {
                         >
                             {message.role === "assistant" && (
                             <Avatar className="h-8 w-8">
-                                <AvatarImage src="https://placehold.co/100x100.png" data-ai-hint="anime girl" alt="Pastel Pal" />
-                                <AvatarFallback>PP</AvatarFallback>
+                                <AvatarImage src="https://placehold.co/100x100.png" data-ai-hint="anime girl" alt="Priya" />
+                                <AvatarFallback>P</AvatarFallback>
                             </Avatar>
                             )}
                             <div
@@ -158,8 +158,8 @@ export default function Home() {
                          {isLoading && (
                             <div className="flex items-end gap-2 justify-start">
                                 <Avatar className="h-8 w-8">
-                                    <AvatarImage src="https://placehold.co/100x100.png" data-ai-hint="anime girl" alt="Pastel Pal" />
-                                    <AvatarFallback>PP</AvatarFallback>
+                                    <AvatarImage src="https://placehold.co/100x100.png" data-ai-hint="anime girl" alt="Priya" />
+                                    <AvatarFallback>P</AvatarFallback>
                                 </Avatar>
                                 <div className="max-w-[75%] rounded-2xl px-4 py-3 text-sm shadow-md bg-card border rounded-bl-none">
                                     <div className="flex items-center space-x-1">
